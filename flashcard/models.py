@@ -52,3 +52,9 @@ class Desafio(models.Model):
     
     def __str__(self):
         return self.titulo
+    
+    def status(self):
+        if self.quantidade_perguntas == self.flashcards.filter(respondido=True).count():
+            return "Respondido"
+        elif self.quantidade_perguntas > self.flashcards.filter(respondido=True).count():
+            return "Falta Responder"

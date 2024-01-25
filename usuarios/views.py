@@ -32,7 +32,7 @@ def cadastro(request):
                 username=username,
                 password=senha,
         )
-            return redirect('/usuarios/login')
+            return redirect('/usuarios/logar')
         
         except:
             messages.add_message(request, constants.ERROR, 'Erro interno do servidor!!')

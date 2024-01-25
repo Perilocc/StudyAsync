@@ -135,6 +135,7 @@ def desafio(request, id):
         acertos = desafio.flashcards.filter(respondido=True).filter(acertou=1).count()
         erros = desafio.flashcards.filter(respondido=True).filter(acertou=0).count()
         faltantes = desafio.flashcards.filter(respondido=False).count()
+        
         return render(request, 'desafio.html', {'desafio': desafio, 'acertos': acertos, 'erros': erros, 'faltantes': faltantes})
     
 def responder_flashcard(request, id):
